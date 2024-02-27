@@ -12,6 +12,7 @@ describe("When Form is created", () => {
 
   describe("and a click is triggered on the submit button", () => {
     it("the success message is displayed", async () => {
+      const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 1000); })
       render(<Home />);
       fireEvent(
         await screen.findByText("Envoyer"),
@@ -21,6 +22,7 @@ describe("When Form is created", () => {
         })
       );
       await screen.findByText("En cours");
+      await mockContactApi();
       await screen.findByText("Message envoyé !");
     });
   });
