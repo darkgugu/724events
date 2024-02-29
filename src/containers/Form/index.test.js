@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Form from "./index";
 
-describe("When Events is created", () => {
+describe("When Form is created", () => {
   it("a list of event card is displayed", async () => {
     render(<Form />);
     await screen.findByText("Email");
